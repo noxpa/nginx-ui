@@ -44,6 +44,12 @@ podman run -d --rm \
 podman run -it --rm  noxpa/nginx-ui:latest /bin/sh
 ```
 
+### 运行环境
+
+> 访问地址：http://localhost:7777
+> 
+> 默认用户名：admin/admin
+
 ### 截图预览
 
 ![login.png](./docs/login.png)

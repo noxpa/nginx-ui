@@ -1,4 +1,4 @@
-## Οὐρανός (拉丁语：Uranus)
+## nginx-ui
 
 Gin 框架写的 nginx 图形界面管理程序，可以 增、删、改、查 nginx的所有配置。
 之前使用宝塔面板出现了很多未解之谜，比如为啥自动升级这样的问题，而且强制捆绑手机号。
@@ -26,6 +26,22 @@ wget -qO- https://fr.qfdk.me/uranus/install.sh|bash
 wget -qO- https://fr.qfdk.me/uranus/upgrade.sh|bash
 # 杀死进程
 kill -9 $(ps aux|grep "uranus"|grep -v grep|awk '{print $2}')
+```
+
+### 构建镜像
+
+```bash
+# 构建镜像
+podman build -t noxpa/nginx-ui:latest .
+
+# 运行容器
+podman run -d --rm \
+  --name uranus-container \
+  -p 7777:7777 \
+  noxpa/nginx-ui:latest
+
+# 进入容器 测试
+podman run -it --rm  noxpa/nginx-ui:latest /bin/sh
 ```
 
 ### 截图预览
